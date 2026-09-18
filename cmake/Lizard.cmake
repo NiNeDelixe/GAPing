@@ -1,7 +1,7 @@
 # Lizard - A cyclomatic complexity analyzer
 # This module enables Lizard for analyzing code complexity
 
-function(ZapretPP_setup_lizard WARNINGS_AS_ERRORS)
+function(GAPing_setup_lizard WARNINGS_AS_ERRORS)
   find_program(LIZARD lizard)
   if(LIZARD)
     # Define thresholds
@@ -73,6 +73,6 @@ function(ZapretPP_setup_lizard WARNINGS_AS_ERRORS)
       \n  Parameter Count: ${LIZARD_PARAM_THRESHOLD} \
       \n  Warnings Threshold: ${LIZARD_WARNINGS_THRESHOLD}")
   else()
-    message(${ZapretPP_WARNING_TYPE} "Lizard requested but executable not found. Install with 'pip install lizard'")
+    message(${GAPing_WARNING_TYPE} "Lizard requested but executable not found. Install with 'pip install lizard'")
   endif()
 endfunction()

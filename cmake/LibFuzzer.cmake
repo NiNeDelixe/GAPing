@@ -1,4 +1,4 @@
-function(ZapretPP_check_libfuzzer_support var_name)
+function(GAPing_check_libfuzzer_support var_name)
   set(LibFuzzerTestSource
       "
 #include <cstdint>

@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required (VERSION 3.10)
-
+set(VCPKG_CMAKE_CONFIGURE_OPTIONS "-DONNX_DISABLE_STATIC_REGISTRATION=ON")
 set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
 if(POLICY CMP0155)
@@ -11,7 +11,7 @@ if (POLICY CMP0141)
   # set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project("SpaceAttractor")
+project("GAPing")
 
 if (NOT DEFINED CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 20)
@@ -23,18 +23,18 @@ include(cmake/Emscripten.cmake)
 include(ProjectOptions.cmake)
 
 
-ZapretPP_setup_options()
+GAPing_setup_options()
 
-if (ZapretPP_WARNINGS_AS_ERRORS)
-  set(ZapretPP_WARNING_TYPE SEND_ERROR)
+if (GAPing_WARNINGS_AS_ERRORS)
+  set(GAPing_WARNING_TYPE SEND_ERROR)
 else()
-  set(ZapretPP_WARNING_TYPE WARNING)
+  set(GAPing_WARNING_TYPE WARNING)
 endif()
 
-ZapretPP_global_options()
+GAPing_global_options()
 
 
-ZapretPP_local_options()
+GAPing_local_options()
 
 option(BUILD_TESTS "Build tests" OFF)
 
@@ -56,8 +56,9 @@ set(${ENTT_BUILD_DOCS} ON)
 ####################################### Subdirectories #######################################
 
 add_subdirectory("thirdparty/Engine")
+add_subdirectory("thirdparty/GAP")
 
-add_subdirectory("Game")
+add_subdirectory("Game" "game")
 
 if(BUILD_TESTS)
     message(STATUS "Building tests")

@@ -32,4 +32,4 @@ endif()
 
 # run vcvarsall when msvc is used
 include("${CMAKE_CURRENT_LIST_DIR}/VCEnvironment.cmake")
-ZapretPP_run_vcvarsall()
+GAPing_run_vcvarsall()

@@ -1,7 +1,7 @@
 include(CheckCXXCompilerFlag)
 
 macro(
-  ZapretPP_enable_hardening
+  GAPing_enable_hardening
   target
   global
   ubsan_minimal_runtime)

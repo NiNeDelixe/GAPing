@@ -3,7 +3,7 @@
 #include "base/screens/MenuScreen.h"
 
 GameScreen::GameScreen(const std::shared_ptr<World>& world)
-	: m_world(world), render(world), m_pause_ui_it(EngiApp->getUis().end())
+	: render(world), m_world(world), m_pause_ui_it(EngiApp->getUis().end())
 {
 	EngiApp->window()->events()->lockCursor(true);
     EngiApp->getSystemManager()->emplaceSystems<GameSystemFactory>();
