@@ -1,3 +1,6 @@
 [submodule "thirdparty/Engine"]
 	path = thirdparty/Engine
 	url = https://github.com/NiNeDelixe/EvilGodSim
+[submodule "thirdparty/GAP"]
+	path = thirdparty/GAP
+	url = https://github.com/NiNeDelixe/GAP
