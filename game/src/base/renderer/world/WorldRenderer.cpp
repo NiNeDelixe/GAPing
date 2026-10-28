@@ -1,9 +1,10 @@
 #include "WorldRenderer.h"
 
 WorldRenderer::WorldRenderer(const std::weak_ptr<World>& world)
-	: m_world(world)
+	: Renderer(world)
 {
 	m_model_renderer = std::make_shared<ModelRenderer>();
+	m_star_renderer = std::make_shared<StarRenderer>(world);
 }
 
 void WorldRenderer::render()
@@ -14,7 +15,10 @@ void WorldRenderer::render()
     }
 
     prepareShaders();
+
+
     m_model_renderer->render();
+    m_star_renderer->render();
 }
 
 void WorldRenderer::prepareShaders()

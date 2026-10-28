@@ -39,12 +39,12 @@ TestLevel::TestLevel()
 	EngiApp->getEntityRegistry().emplace<ModelComponent>(entity2, model2);
 	EngiApp->getEntityRegistry().emplace<Transform>(entity2);
 	EngiApp->getEntityRegistry().emplace<PlayerComponent>(entity2);
-	EngiApp->getEntityRegistry().emplace<WorldSpaceCache>(entity2);
-	EngiApp->getEntityRegistry().emplace<RenderTransform>(entity2);
-	EngiApp->getEntityRegistry().emplace<SpaceTransform>(entity2);
+	// EngiApp->getEntityRegistry().emplace<WorldSpaceCache>(entity2);
+	// EngiApp->getEntityRegistry().emplace<RenderTransform>(entity2);
+	// EngiApp->getEntityRegistry().emplace<SpaceTransform>(entity2);
 
-	EngiApp->getEntityRegistry().emplace<GravityComponent>(entity2).set_force(1);
-	EngiApp->getEntityRegistry().emplace<RigidBodyComponent>(entity2);
+	// EngiApp->getEntityRegistry().emplace<GravityComponent>(entity2).set_force(1);
+	// EngiApp->getEntityRegistry().emplace<RigidBodyComponent>(entity2);
 
 
 	auto v = EngiApp->getEntityRegistry().view<Camera>();
