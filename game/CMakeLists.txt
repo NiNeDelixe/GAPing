@@ -24,30 +24,9 @@ target_link_libraries(${EXECUTABLE_NAME}
         cpptrace::cpptrace
         ng-log::ng-log
         GAP::GAP
-        piper
-        onnxruntime
-        FlatBuffers
-        #onnxruntime::onnxruntime
+        #sherpa-onnx
 )
-
-# add_custom_command(TARGET ${EXECUTABLE_NAME} POST_BUILD
-#     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#         "$<TARGET_FILE:piper>"
-#         "$<TARGET_FILE_DIR:${EXECUTABLE_NAME}>/"
-# )
-# if (WIN32)
-#     file(GLOB ORT_SHARED_LIBS "${ORT_LIBRARY_DIR}/*.dll")
-# elseif (APPLE)
-#     file(GLOB ORT_SHARED_LIBS "${ORT_LIBRARY_DIR}/*.dylib")
-# else()
-#     file(GLOB ORT_SHARED_LIBS "${ORT_LIBRARY_DIR}/*.so" "${ORT_LIBRARY_DIR}/*.so.*")
-# endif()
-
-# add_custom_command(TARGET ${EXECUTABLE_NAME} POST_BUILD
-#     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#         ${ORT_SHARED_LIBS}
-#         $<TARGET_FILE_DIR:${EXECUTABLE_NAME}>
-# )
+target_compile_definitions(${EXECUTABLE_NAME} PUBLIC _USE_MATH_DEFINES)
 
 target_include_directories(${EXECUTABLE_NAME} PUBLIC "${PROJECT_SOURCE_DIR}/src")
 

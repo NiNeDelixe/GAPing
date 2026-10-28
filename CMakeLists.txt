@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required (VERSION 3.10)
-set(VCPKG_CMAKE_CONFIGURE_OPTIONS "-DONNX_DISABLE_STATIC_REGISTRATION=ON")
 set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+set(VCPKG_CXX_FLAGS "/Od")
 
 if(POLICY CMP0155)
   cmake_policy(SET CMP0155 OLD)
@@ -12,11 +12,11 @@ if (POLICY CMP0141)
 endif()
 
 project("GAPing")
-
+set(CMAKE_CXX_STANDARD 17)
 if (NOT DEFINED CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 20)
 endif()
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(cmake/PreventInSourceBuilds.cmake)
 include(cmake/Emscripten.cmake)

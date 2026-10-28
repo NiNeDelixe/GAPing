@@ -364,3 +364,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .stamp
+
+# TTS voice assets (64MB+, external download)
+voice/
